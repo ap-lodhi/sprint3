@@ -1,7 +1,12 @@
-import React from "react";
-
+import Login from "../pages/Login";
 const Navbar = () => {
-  return <div>{/* CODE HERE */}</div>;
+ 
+  
+  return <div>
+
+  <Login/>
+
+  </div>;
 };
 
 export default Navbar;

@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import Products from "../components/Products";
+import { CartContext } from "../context/CartContext";
 
 const Home = () => {
-  return <div>{/* Code here */}</div>;
+  const {cart} =useContext(CartContext)
+  return <div>
+    <h2> Total Count-{cart.reduce((prev,curr)=> prev +curr.count ,0)}</h2>
+    <Products/>
+    </div>;
 };
 
 export default Home;
