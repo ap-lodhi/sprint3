@@ -11,6 +11,7 @@ import { CartContext } from "../context/CartContext";
 const ProductItem = ({name, description , id}) => {
  
  const   {cart, handleAddToCart, handleIDecrement, handleIncrement, handleRemove}=useContext(CartContext)
+ const noOfCount =cart.find((el)=>el.productId === id)?.count;
  return <div>
   
       <Card sx={{ minWidth: 275 }}>
@@ -37,14 +38,14 @@ const ProductItem = ({name, description , id}) => {
       </CardContent>
 
       <Button  onClick={()=>handleAddToCart(id)}>
-      <IconButton color="primary" aria-label="add to shopping cart">
+      <IconButton  disabled={!!noOfCount}  color="primary" aria-label="add to shopping cart">
         <AddShoppingCartIcon />
       </IconButton>
       </Button>
-      <Button  onClick={()=>handleRemove(id)} variant="outlined" startIcon={<DeleteIcon />}> Delete</Button>
+      <Button   disabled={!noOfCount}  onClick={()=>handleRemove(id)} variant="outlined" startIcon={<DeleteIcon />}> Delete</Button>
       <br />
-      <Button onClick={()=>handleIncrement(id)} variant="contained">Increment</Button>
-      <Button onClick={()=>handleIDecrement(id)} variant="contained">Decrement</Button>
+      <Button  disabled={!noOfCount}  onClick={()=>handleIncrement(id)} variant="contained">Increment</Button>
+      <Button  disabled={!noOfCount} onClick={()=>handleIDecrement(id)} variant="contained">Decrement</Button>
     </Card>
   
 
