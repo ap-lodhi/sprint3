@@ -17,7 +17,7 @@ const [products ,setProducts]=useState([]);
   },[])
   return <div>
 
-    {products.map((el,ind)=> <ProductItem {...el}/>)}
+    {products.map((el,ind)=> <ProductItem key={el.id} {...el}/>)}
   </div>;
 };
 

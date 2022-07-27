@@ -21,7 +21,8 @@ export const AuthProvider = ({ children }) => {
 }
 const value ={ 
   handleLogin,
-  token
+  token,
+  setToken,
 }
   // code here
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

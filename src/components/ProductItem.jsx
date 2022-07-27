@@ -31,7 +31,7 @@ const ProductItem = ({name, description , id}) => {
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
         id-  {id}
         </Typography>
-        <div> {cart.find((el)=>el.productId === id)?.count} </div>
+        <div>{!!noOfCount ? noOfCount: "not Added to cart"} </div>
         {/* <Typography sx={{ mb: 1.5 }} color="text.secondary">
       {"toatal count"}
         </Typography> */}
